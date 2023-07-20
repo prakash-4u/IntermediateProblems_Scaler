@@ -1,0 +1,38 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int m=sc.nextInt();
+    int a[][]=new int[n][m];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+        a[i][j]=sc.nextInt();
+    }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=i;j<m;j++){
+            int t=a[i][j];
+            a[i][j]=a[j][i];
+            a[j][i]=t;
+        }
+    }
+    for(int i=0;i<n;i++){
+        int p1=0,p2=m-1;
+        while(p1<p2){
+            int t=a[i][p1];
+            a[i][p1]=a[i][p2];
+            a[i][p2]=t;
+            p1++;
+            p2--;
+        }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+        System.out.print(a[i][j]+" ");
+    }
+    System.out.println();
+    }
+   //  System.out.println();
+    }
+}
