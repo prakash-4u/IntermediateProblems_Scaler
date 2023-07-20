@@ -1,0 +1,51 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i<n;i++){
+        a[i]=sc.nextInt();
+    }
+    int min=Integer.MAX_VALUE;
+    int max=Integer.MIN_VALUE;
+    int ans=Integer.MAX_VALUE,length=0;
+    for(int i=0;i<n;i++){
+        if(min>a[i]){
+            min=a[i];
+        }
+        if(max<a[i]){
+            max=a[i];
+        }
+    }
+    for(int i=0;i<n;i++){
+        if(a[i]==min){
+            for(int j=i+1;j<n;j++){
+                if(a[j]==min){
+                    break;
+                }
+                if(a[j]==max){
+                    length=j-i+1;
+                    ans=Math.min(ans,length);
+                    break;
+                }
+            }
+        }
+        if(a[i]==max){
+           for(int j=i+1;j<n;j++){
+               if(a[j]==max){
+                   break;
+               }
+               if(a[j]==min){
+                   length=j-i+1;
+                   ans=Math.min(ans,length);
+                   break;
+               }
+           } 
+        }
+    }
+    System.out.println(min+" "+max);
+    System.out.println(ans);
+   //  System.out.println();
+    }
+}
