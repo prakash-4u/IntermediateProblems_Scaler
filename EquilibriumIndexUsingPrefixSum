@@ -1,0 +1,32 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i<n;i++){
+        a[i]=sc.nextInt();
+    }
+    int pf[]=new int[n];
+    int count=0;
+    pf[0]=a[0];
+    for(int i=1;i<n;i++){
+        pf[i]=pf[i-1]+a[i];
+    }
+    int left=0,right=0;
+    for(int i=0;i<n;i++){
+        if(i==0){
+            left=0;
+        }
+        else{
+            left=pf[i-1];
+        }
+        right=pf[n-1]-pf[i];
+        if(left==right){
+            count++;
+        }
+    }
+    System.out.println(count);
+   //  System.out.println();
+    }
+}
