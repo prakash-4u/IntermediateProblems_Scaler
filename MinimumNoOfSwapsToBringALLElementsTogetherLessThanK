@@ -1,0 +1,36 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+    Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+    int a[]=new int[n];
+    int k=sc.nextInt();
+    for(int i=0;i<n;i++){
+        a[i]=sc.nextInt();
+    }
+     int count=0,bad=0;
+     for(int i=0;i<n;i++){
+         if(a[i]<k){
+             count++;
+         }
+     }
+     for(int i=0;i<count;i++){
+         if(a[i]>k){
+             bad++;
+         }
+     }
+     int ans=bad,s=1,e=count;
+     while(e<n){
+         if(a[s-1]>k)
+         bad--;
+         if(a[e]>k)
+         bad++;
+         ans=Math.min(ans,bad);
+         s++;
+         e++;
+     }
+     System.out.println(ans);
+    // System.out.println(ans);
+     
+    }
+}
