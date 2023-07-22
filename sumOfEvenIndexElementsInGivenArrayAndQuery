@@ -1,0 +1,45 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i<n;i++){
+        a[i]=sc.nextInt();
+    }
+     int q=sc.nextInt();
+     int pfe[]=new int[n];
+     pfe[0]=a[0];
+     for(int i=1;i<n;i++){
+         if(i%2==0)
+       pfe[i]=pfe[i-1]+a[i];
+       else
+       pfe[i]=pfe[i-1];
+    }
+    int pfo[]=new int[n];
+     pfo[0]=0;
+     for(int i=1;i<n;i++){
+         if(i%2==1)
+       pfo[i]=pfo[i-1]+a[i];
+       else
+       pfo[i]=pfo[i-1];
+    }
+    // for(int i=0;i<n;i++){
+    //     System.out.print(pfe[i]+" ");
+    // }
+    // for(int i=0;i<n;i++){
+    //     System.out.print(pfo[i]+" ");
+    // }
+     for(int i=0;i<q;i++){
+     int l=sc.nextInt();
+     int r=sc.nextInt();
+     if(l==0){
+         System.out.println(pfe[r]);
+     }
+     else{
+         System.out.println(pfe[r]-pfe[l-1]);
+     }
+     }
+     // System.out.println();
+    }
+}
