@@ -1,0 +1,26 @@
+import java.util.*;
+public class MyClass {
+    public static String reverse(int s,int e,String S){
+         StringBuilder sb=new StringBuilder();
+         for(int i=e;i>=s;i--){
+             sb.append(S.charAt(i));
+         }
+         return sb.toString();
+    }
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     String A=sc.next();
+      int n = A.length();
+      int s=sc.nextInt();
+      int e=sc.nextInt();
+      StringBuilder sb=new StringBuilder();
+      for(int i=0;i<=s-1;i++){
+          sb.append(A.charAt(i));
+      }
+      sb.append(reverse(s,e,A));
+      for(int i=e+1;i<n;i++){
+          sb.append(A.charAt(i));
+      }
+      System.out.println(sb.toString());
+    }
+}
