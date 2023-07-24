@@ -1,0 +1,35 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i<n;i++){
+        a[i]=sc.nextInt();
+    }
+    Arrays.sort(a);
+    int count=0,ans=0;
+    for(int i=0;i<n;i++){
+        if(i==a[0]){
+            count=i;
+            ans++;
+         //   System.out.print(ans+" j ");
+        }
+        else if(i!=a[0] && i==0){
+            continue;
+        }
+        else if((a[i]==a[i-1]) && (a[i]==count)){
+            ans++;
+         //   System.out.print(ans+" k ");
+        }
+        else if((a[i]!=a[i-1]) && (a[i]==i)){
+            ans++;
+            count=i;
+         //   System.out.print(ans+" l ");
+        }
+
+     }
+      System.out.print(ans+"  ");
+      // System.out.print(a[i]+" ");
+    }
+}
