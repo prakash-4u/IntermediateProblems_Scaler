@@ -1,0 +1,44 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i<n;i++){
+        a[i]=sc.nextInt();
+    }
+    int k=sc.nextInt();
+    HashMap<Integer,Integer>map=new HashMap<>();
+    int s=0,e=k-1;
+    while(s<=e){
+        if(map.containsKey(a[s])){
+            map.put(a[s],(map.get(a[s])+1));
+        }
+        else{
+            map.put(a[s],1);
+        }
+        s++;
+    }
+    System.out.print(map.size()+" ");
+    s=1;
+    e=k;
+    while(e<n){
+        if(map.get(a[s-1])>1){
+            map.put(a[s-1],(map.get(a[s-1])-1));
+        }
+        else{
+            map.remove(a[s-1]);
+        }
+         if(map.containsKey(a[e])){
+            map.put(a[e],(map.get(a[e])+1));
+        }
+        else{
+            map.put(a[e],1);
+        }
+        System.out.print(map.size()+" ");
+        s++;
+        e++;
+    }
+      //  System.out.print(map);
+    }
+}
