@@ -1,0 +1,29 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+     String str=sc.nextLine();
+     int n=str.length();
+     StringBuilder sb=new StringBuilder();
+     sb.append(str);
+     sb.reverse();
+     System.out.println(sb);
+     int p1=0,p2=0;
+     while(p2<n){
+         while(p2<n && sb.charAt(p2)!=' '){
+             p2++;
+         }
+         int s=p1,e=p2-1;
+         while(s<e){
+             char ch=sb.charAt(s),ch1=sb.charAt(e);
+             sb.setCharAt(s,ch1);
+             sb.setCharAt(e,ch);
+             s++;
+             e--;
+         }
+         p1=p2+1;
+         p2=p1;
+     }
+      System.out.println(sb.toString());
+    }
+}
