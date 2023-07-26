@@ -1,0 +1,23 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     String str=sc.nextLine();
+     int n=str.length();
+     int p1=0,p2=n-1,t=0;
+     while(p1<p2){
+         if(str.charAt(p1)==str.charAt(p2)){
+             p1++;
+             p2--;
+         }
+         else{
+             System.out.println("No");
+             t=1;
+             break;
+         }
+     }
+     if(t==0){
+         System.out.println("Yes");
+     }
+    }
+}
