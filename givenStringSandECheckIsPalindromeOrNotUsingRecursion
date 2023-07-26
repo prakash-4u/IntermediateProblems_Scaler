@@ -1,0 +1,28 @@
+import java.util.*;
+public class MyClass {
+    public static boolean isPalindrome(int s,int e,String str){
+        if(s>e){
+            return true;
+        }
+        if(str.charAt(s)==str.charAt(e)){
+            if(isPalindrome(s+1,e-1,str)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }         
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     String str=sc.next();
+    // int n=str.length();
+     int s=sc.nextInt();
+     int e=sc.nextInt();
+    boolean a= isPalindrome(s,e,str);
+        System.out.print(a);
+    }
+}
