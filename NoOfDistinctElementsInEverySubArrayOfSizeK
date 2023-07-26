@@ -1,0 +1,23 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i<n;i++){
+        a[i]=sc.nextInt();
+    }
+    int k=sc.nextInt();
+    int s=0,e=k-1;
+    while(e<n){
+        HashSet<Integer>set=new HashSet<>();
+        for(int i=s;i<=e;i++){
+            set.add(a[i]);
+        }
+        System.out.print(set.size());
+        s++;
+        e++;
+    }
+      //  System.out.print(map);
+    }
+}
