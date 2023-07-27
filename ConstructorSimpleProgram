@@ -1,0 +1,14 @@
+import java.util.*;
+  public class Student{
+       int m1,m2,m3;
+       Student(int a,int b,int c){
+           m1=a;
+           m2=b;
+           m3=c;
+       }
+    public static void main(String args[]) {
+     Student s1=new Student(5,6,7);
+     System.out.println(s1.m1+" "+s1.m2+" "+s1.m3);
+     
+    }
+}
