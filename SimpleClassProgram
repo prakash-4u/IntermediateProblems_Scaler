@@ -1,0 +1,27 @@
+import java.util.*;
+  public class Student{
+       String name;
+       int rollNo;
+       int m1,m2,m3;
+       int totalMarks(){
+           return m1+m2+m3;
+       }
+       int maxMarks(){
+           return Math.max(m1,Math.max(m2,m3));
+       }
+       void printname(){
+           System.out.println(name);
+       }
+    public static void main(String args[]) {
+     Student s1=new Student();
+     s1.name="Prakash";
+     s1.rollNo=32;
+     s1.m1=95;
+     s1.m2=98;
+     s1.m3=99;
+     Student s2=s1;
+     System.out.println(s2.totalMarks());
+     System.out.println(s2.maxMarks());
+     s1.printname();
+    }
+}
