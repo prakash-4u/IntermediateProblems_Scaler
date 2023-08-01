@@ -1,0 +1,46 @@
+import java.util.*;
+public class MyClass {
+    public static boolean checkBit(int i,int j){
+    // 1st method
+    //   if(((1<<j)&i)!=0){
+    //       System.out.print("True");
+    //   }
+    //   else{
+    //       System.out.print("False");
+    //   }
+    // 2nd method
+     if(((i>>j)&1)==1){
+          return true;
+      }
+      else{
+          return false;
+       }
+    }
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int k=sc.nextInt();
+    int a[]=new int[n];
+    for(int i=0;i<n;i++){
+        a[i]=sc.nextInt();
+    }
+    int sum=0,t=0;
+    for(int i=0;i<Math.pow(2,n);i++){
+        sum=0;
+        for(int j=0;j<n;j++){
+            if(checkBit(i,j)==true){
+                sum+=a[j];
+            }
+        }
+        if(sum==k){
+            t=1;
+        }
+    }
+    if(t==0){
+        System.out.print("False");
+    }
+    else{
+            System.out.print("True");
+    }
+    }
+}
