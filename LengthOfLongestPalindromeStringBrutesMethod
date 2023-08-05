@@ -1,0 +1,41 @@
+import java.util.*;
+public class Solution {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        String A=sc.nextLine();
+        int n=A.length();
+        int s=0,e=0;
+         String ansStr="";
+      //  System.out.println(n);
+        int length=0,ans=0;
+        char ch[]=A.toCharArray();
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                int p1=i,p2=j;
+                while(p1<p2){
+                    if(ch[p1]==ch[p2]){
+                        p1++;
+                        p2--;
+                    }
+                    else{
+                        break;
+                    }
+                }
+                if(p1>=p2){
+                    length=j-i+1;
+                    //ans=Math.max(ans,length);
+                    //System.out.println(length+" "+i+" "+j);
+                   if(ans<length){
+                        ans=length;
+                        s=i;
+                        e=j;
+                    }
+                }
+            }
+        }
+        for(int i=s;i<=e;i++){
+            ansStr+=ch[i];
+        }
+      System.out.println(ansStr);
+     }
+}
