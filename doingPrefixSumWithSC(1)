@@ -1,0 +1,52 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     int a[][]={{-8, 1, 1},{-1, 6, 6},{7, 10, 10}};
+     int n=a.length;
+     int m=a[0].length;
+     int pf[][]=new int[n][m];
+     for(int i=0;i<n;i++){
+         for(int j=0;j<m;j++){
+            System.out.print(a[i][j]+" ");
+         }
+         System.out.println();
+     }
+       System.out.println();
+       
+     for(int i=0;i<n;i++){
+             pf[i][0]=a[i][0];
+     }
+      for(int i=0;i<n;i++){
+         for(int j=0;j<m;j++){
+            System.out.print(pf[i][j]+" ");
+         }
+         System.out.println();
+     }
+     for(int i=0;i<n;i++){
+         for(int j=1;j<m;j++){
+             pf[i][j]=pf[i][j-1]+a[i][j];
+         }
+     }
+      System.out.println();
+     for(int i=0;i<n;i++){
+         for(int j=0;j<m;j++){
+            System.out.print(pf[i][j]+" ");
+         }
+         System.out.println();
+     }
+     
+     for(int i=0;i<n;i++){
+         for(int j=1;j<m;j++){
+             a[i][j]=a[i][j-1]+a[i][j];
+         }
+     }
+     System.out.println();
+     for(int i=0;i<n;i++){
+         for(int j=0;j<m;j++){
+            System.out.print(pf[i][j]+" ");
+         }
+         System.out.println();
+     }
+     
+    }
+}
