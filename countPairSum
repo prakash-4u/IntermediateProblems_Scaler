@@ -1,0 +1,24 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        int A[]={1, 2, 1, 2};
+        int B=3;
+      int n=A.length;
+        long cnt=0;
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int i=0;i<n;i++){
+            int b=B-A[i];
+            if(map.containsKey(b)){
+                cnt=cnt+map.get(b);
+            }
+            if(map.containsKey(A[i]))
+                map.put(A[i],map.get(A[i])+1);
+            else{
+                map.put(A[i],1);
+            }
+        //   System.out.print(map);
+        //          System.out.print(cnt);
+        }
+               System.out.print(cnt);
+    }
+}
