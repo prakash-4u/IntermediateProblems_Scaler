@@ -1,0 +1,32 @@
+public class Solution {
+    public static int factorSort(int a){
+        int cnt=0;
+        for(int i=1;i*i<=a;i++){
+            if(a%i==0){
+                cnt++;
+                if(i*i!=a){
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+    }
+    public ArrayList<Integer> solve(ArrayList<Integer> A) {
+         Collections.sort(A,new Comparator<Integer>(){
+         public int compare(Integer a,Integer b){
+             int fa=factorSort(a);
+             int fb=factorSort(b);
+             if(fa<fb){
+                 return -1;
+             }
+             else if(fa>fb){
+                 return 1;
+             }
+             else{
+                 return a-b;
+             }
+         }
+        });
+        return A;
+    }
+}
