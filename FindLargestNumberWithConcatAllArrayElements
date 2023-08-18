@@ -1,0 +1,27 @@
+public class Solution {
+    public String largestNumber(final int[] A) {
+        String res="";
+        String b[]=new String[A.length];
+        for(int i=0;i<A.length;i++){
+            b[i]=Integer.toString(A[i]); //String.valueOf(A[i]);
+        }
+        Arrays.sort(b,new Comparator<String>(){
+        public int compare(String s1,String s2){
+        String temp1=s1+s2;
+        String temp2=s2+s1;
+        return temp2.compareTo(temp1);
+        }
+        });
+        if(b[0].equals("0")){
+            return "0";
+        }
+        for(String i:b){
+            res+=i;
+           // res.append(i);
+        }
+        // for(int i=0;i<b.length;i++){
+        //     res+=String.valueOf(b[i]);
+        // }
+        return res;
+    }
+}
