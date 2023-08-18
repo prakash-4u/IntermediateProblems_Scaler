@@ -15,5 +15,18 @@ public class MyClass {
          }
      }
      System.out.print(count);
+
+    //  public static int factorSort(int a){
+    //     int cnt=0;
+    //     for(int i=1;i*i<=a;i++){
+    //         if(a%i==0){
+    //             cnt++;
+    //             if(i*i!=a){
+    //                 cnt++;
+    //             }
+    //         }
+    //     }
+    //     return cnt;
+    }
     }
 }
