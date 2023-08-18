@@ -1,0 +1,54 @@
+import java.util.*;
+public class MyClass {
+    public static void mergeSort(int A[],int strt,int mid,int end){
+         int temp[]=new int[end-strt+1];
+        int p1=strt,p2=mid+1,p3=0;
+         while(p1<=mid && p2<=end){
+             if(A[p1]<=A[p2]){
+                 temp[p3]=A[p1];
+                 p1++;
+                 p3++;
+             }
+             else{
+                 temp[p3]=A[p2];
+                 p2++;
+                 p3++;
+             }
+         }
+         while(p1<=mid){
+              temp[p3]=A[p1];
+                 p1++;
+                 p3++;
+         }
+         while(p2<=end){
+             temp[p3]=A[p2];
+                 p2++;
+                 p3++;
+         }
+        //  for(int i:temp){
+        //     System.out.print(i+" ");
+        // }
+        // System.out.println();
+         for(int i=strt,j=0;i<=end;i++,j++){
+             A[i]=temp[j];
+         }
+        return;
+    }
+    public static void merge(int A[],int strt,int end){
+        if(strt==end){
+            return;
+        }
+        int mid=(strt+end)/2;
+        merge(A,strt,mid);
+        merge(A,mid+1,end);
+        mergeSort(A,strt,mid,end);
+        return;
+    }
+    public static void main(String args[]) {
+        int A[]={3,10,6,8,15,2,12,18,17};
+        merge(A,0,A.length-1);
+        for(int i:A){
+            System.out.print(i+" ");
+        }
+    }
+}
